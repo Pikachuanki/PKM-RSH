@@ -25,7 +25,7 @@ body::before {
   z-index: -1;
 }
 
-/* === HEADER & NAVBAR (responsive ala arsip/profil) === */
+/* === HEADER & NAVBAR === */
 .header {
   background-color: #064635;
   padding: 15px 30px;
@@ -40,10 +40,10 @@ body::before {
   color: white;
 }
 
+/* Navbar */
 .navbar ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   margin: 0;
   padding: 0;
@@ -52,7 +52,6 @@ body::before {
 .navbar ul li a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
   font-size: 1rem;
   transition: 0.3s;
 }
@@ -61,6 +60,22 @@ body::before {
 .navbar ul li a.active {
   text-decoration: underline;
   color: #a3d9a5;
+}
+
+/* Tombol Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* === KONTEN LOGIN === */
@@ -155,11 +170,20 @@ main {
   .header .logo h2 {
     font-size: 1.2rem;
   }
+  .menu-toggle {
+    display: flex;
+  }
   .navbar ul {
-    justify-content: center;
+    display: none;
+    flex-direction: column;
+    background: #064635;
     width: 100%;
-    gap: 12px;
-    margin-top: 8px;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 6px;
+  }
+  .navbar ul.show {
+    display: flex;
   }
   .login-container {
     width: 90%;
@@ -182,13 +206,6 @@ main {
   }
   .header .logo h2 {
     font-size: 1.1rem;
-  }
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    width: 100%;
-    margin-top: 8px;
   }
   .navbar ul li a {
     font-size: 0.9rem;

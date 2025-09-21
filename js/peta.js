@@ -1,3 +1,5 @@
+// peta.js (lengkap)
+// Inisialisasi peta
 var map = L.map('map').setView([-8.219, 114.369], 12);
 
 // Basemap
@@ -76,7 +78,7 @@ fetch('../data/J_Evakuasi_BWS.geojson').then(r => r.json()).then(d => { jalurLay
 fetch('../data/T_Evakuasi_BWI.geojson').then(r => r.json()).then(d => { tempatLayer.addData(d); });
 fetch('../data/T_Evakuasi_BWS.geojson').then(r => r.json()).then(d => { tempatLayer.addData(d); });
 
-// Marker Kearifan Lokal
+// Marker Kearifan Lokal (isi popup penuh dikembalikan)
 var kearifanLayer = L.layerGroup();
 
 var marker1 = L.marker([-8.024141322546003, 114.18145476023389]).bindPopup(`
@@ -97,7 +99,7 @@ var marker2 = L.marker([-7.9884384010113365, 114.17333930005388]).bindPopup(`
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Blawan</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah ritual selamatan desa yang merupakan tradisi masyarakat Madura yang bertujuan untuk mengungkapkan rasa syukur atas hasil panen dan nikmat yang diberikan Tuhan, sekaligus memohon perlindungan dan keberkahan agar desa dan warganya terhindar dari marabahaya, bencana alam, serta penyakit. </td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah ritual selamatan desa yang merupakan tradisi masyarakat Madura yang bertujuan untuk mengungkapkan rasa syukur atas hasil panen dan nikmat yang diberikan Tuhan, sekaligus memohon perlindungan dan keberkahan agar desa dan warganya terhindar dari marabahaya, bencana alam, serta penyakit.</td></tr>
     </table>
   </div>
 `);
@@ -162,10 +164,24 @@ document.querySelectorAll("input[name=basemap]").forEach(radio => {
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.querySelector(".sidebar-toggle");
 
-toggleBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("closed");
-  toggleBtn.textContent = sidebar.classList.contains("closed") ? "☰ Buka Menu" : "✖ Tutup";
-});
+if (toggleBtn && sidebar) {
+  // set awal teks sesuai state
+  toggleBtn.textContent = sidebar.classList.contains("closed") ? "⬆️ Buka Menu" : "✖ Tutup";
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("closed");
+    toggleBtn.textContent = sidebar.classList.contains("closed") ? "⬆️ Buka Menu" : "✖ Tutup";
+  });
+}
+
+// === Tombol panah atas (reopen sidebar) ===
+const reopenBtn = document.querySelector(".sidebar-reopen");
+if (reopenBtn) {
+  reopenBtn.addEventListener("click", () => {
+    sidebar.classList.remove("closed");
+    toggleBtn.textContent = "✖ Tutup";
+  });
+}
 
 // === Fitur Pencarian Lokasi (Area) ===
 let searchLayer; // buat nyimpen hasil pencarian biar bisa dihapus pas search baru
@@ -177,7 +193,7 @@ function searchLocation() {
     return;
   }
 
-  fetch(`https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&q=${query}`)
+  fetch(`https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&q=${encodeURIComponent(query)}`)
     .then(res => res.json())
     .then(data => {
       if (data && data.length > 0) {
@@ -189,8 +205,8 @@ function searchLocation() {
         const result = data[0];
         const bbox = result.boundingbox;
         const bounds = [
-          [bbox[0], bbox[2]],
-          [bbox[1], bbox[3]]
+          [parseFloat(bbox[0]), parseFloat(bbox[2])],
+          [parseFloat(bbox[1]), parseFloat(bbox[3])]
         ];
 
         // zoom ke area
@@ -226,22 +242,16 @@ function searchLocation() {
     });
 }
 
-// Event klik tombol 🔍
-document.querySelector(".search-box button").addEventListener("click", searchLocation);
+// Pasang event pencarian:
+// - Jika HTML sudah pakai onclick di tombol, kita tidak menambahkan listener tambahan (mencegah double-call).
+const searchBtn = document.querySelector(".search-box button");
+if (searchBtn && !searchBtn.getAttribute("onclick")) {
+  searchBtn.addEventListener("click", searchLocation);
+}
 
-// Event tekan ENTER di input
-document.getElementById("searchInput").addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    searchLocation();
-  }
-});
-
-// Event klik tombol 🔍
-document.querySelector(".search-box button").addEventListener("click", searchLocation);
-
-// Event tekan ENTER di input
-document.getElementById("searchInput").addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    searchLocation();
-  }
-});
+const searchInput = document.getElementById("searchInput");
+if (searchInput && !searchInput.getAttribute("onkeypress")) {
+  searchInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") searchLocation();
+  });
+}

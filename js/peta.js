@@ -97,7 +97,7 @@ var marker2 = L.marker([-7.9884384010113365, 114.17333930005388]).bindPopup(`
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Blawan</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah ritual tahunan dalam tradisi masyarakat Madura...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah ritual selamatan desa yang merupakan tradisi masyarakat Madura yang bertujuan untuk mengungkapkan rasa syukur atas hasil panen dan nikmat yang diberikan Tuhan, sekaligus memohon perlindungan dan keberkahan agar desa dan warganya terhindar dari marabahaya, bencana alam, serta penyakit. </td></tr>
     </table>
   </div>
 `);
@@ -108,7 +108,7 @@ var marker3 = L.marker([-7.988535700674706, 114.17241499988876]).bindPopup(`
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Blawan</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Tradisi Can Macanan merupakan bentuk ekspresi rasa syukur masyarakat...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Tradisi Can Macanan merupakan bentuk ekspresi rasa syukur masyarakat setempat kepada Sang Pencipta dan merupakan salah satu warisan budaya yang dipertahankan</td></tr>
     </table>
   </div>
 `);
@@ -119,7 +119,7 @@ var marker4 = L.marker([-7.9927996004721775, 114.1929963000355]).bindPopup(`
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kali Gedang</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Kali Gedang</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Molong Kopi adalah sebuah tradisi ritual di Bondowoso, Jawa Timur...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Molong Kopi adalah tradisi selamatan dan ritual yang menandai dimulainya panen raya kopi di daerah Bondowoso, Jawa Timur, dengan melakukan proses memetik kopi pertama secara simbolis diiringi doa-doa untuk keberkahan hasil panen.</td></tr>
     </table>
   </div>
 `);

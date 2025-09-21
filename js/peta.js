@@ -114,7 +114,7 @@ var marker3 = L.marker([-7.988535700674706, 114.17241499988876]).bindPopup(`
 `);
 var marker4 = L.marker([-7.9927996004721775, 114.1929963000355]).bindPopup(`
   <div style="text-align:center;">
-    <img class="popup-img" src="../img/2.jpg" alt="Ritual Adat">
+    <img class="popup-img" src="../img/4.jpg" alt="Ritual Adat">
     <h4 class="popup-title">Rokat Molong Kopi</h4>
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kali Gedang</td></tr>

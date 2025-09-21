@@ -1,3 +1,8 @@
+// Toggle navbar dengan hamburger
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.getElementById("navbar").classList.toggle("active");
+});
+
 // Filter berita berdasarkan kategori
 const filterButtons = document.querySelectorAll(".filter-btn");
 const newsCards = document.querySelectorAll(".news-card");

@@ -1,4 +1,6 @@
-/* Reset */
+/* ===================== */
+/* RESET & BASE STYLE */
+/* ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@ body {
   background: url('/Gambar/DJI_0943.JPG') no-repeat center center/cover;
 }
 
-/* Overlay */
+/* Overlay gelap */
 body::before {
   content: "";
   position: fixed;
@@ -25,7 +27,9 @@ body::before {
   z-index: -1;
 }
 
-/* Header */
+/* ===================== */
+/* HEADER & NAVBAR */
+/* ===================== */
 .header {
   background-color: #064635;
   padding: 15px 30px;
@@ -36,10 +40,9 @@ body::before {
 
 .header .logo h2 {
   font-size: 1.5rem;
-  color: white;
+  color: #fff;
 }
 
-/* Navbar */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -48,7 +51,7 @@ body::before {
 
 .navbar ul li a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -57,7 +60,9 @@ body::before {
   color: #a3d9a5;
 }
 
-/* Konten Sign Up */
+/* ===================== */
+/* SIGN UP FORM */
+/* ===================== */
 main {
   flex: 1;
   display: flex;
@@ -73,6 +78,7 @@ main {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   width: 340px;
   text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .signup-container h2 {
@@ -87,6 +93,11 @@ main {
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
+  transition: border 0.3s;
+}
+
+.signup-container input:focus {
+  border-color: #2196F3;
 }
 
 .signup-container button {
@@ -95,10 +106,11 @@ main {
   border: none;
   border-radius: 8px;
   background: #2196F3;
-  color: white;
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background 0.3s;
 }
 
 .signup-container button:hover {
@@ -118,6 +130,12 @@ main {
 
 .login-link a:hover {
   text-decoration: underline;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===================== */

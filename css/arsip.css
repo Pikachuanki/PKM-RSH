@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* Navbar */
+/* === NAVBAR (responsive ala profil) === */
 .navbar {
   background: #064635;
   display: flex;
@@ -16,6 +16,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -30,6 +31,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .navbar ul li {
@@ -43,11 +45,12 @@ body {
   transition: 0.3s;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a:hover,
+.navbar ul li a.active {
   text-decoration: underline;
 }
 
-/* Arsip Section */
+/* === ARSIP SECTION === */
 .arsip-section {
   max-width: 1200px;
   margin: 40px auto;
@@ -110,7 +113,7 @@ body {
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .navbar {
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 
   .arsip-section h2 {
@@ -129,15 +132,15 @@ body {
 /* HP (≤768px) */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
-
   .navbar ul {
-    flex-wrap: wrap;
-    margin-top: 10px;
-    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar ul li {
+    margin-left: 15px;
+    margin-top: 8px;
   }
 
   .arsip-section {
@@ -169,23 +172,11 @@ body {
 
 /* HP kecil (≤480px) */
 @media (max-width: 480px) {
-  .navbar {
-    padding: 10px 15px;
-  }
-
   .navbar .logo {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  .navbar ul li {
-    margin: 5px 0;
+  .navbar ul li a {
+    font-size: 0.9rem;
   }
 
   .arsip-section h2 {

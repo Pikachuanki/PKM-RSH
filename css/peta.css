@@ -15,34 +15,54 @@ html, body {
   overflow: hidden; /* hilangin scrollbar putih */
 }
 
-/* Header/Navbar */
-.header {
-  background-color: #064635;
-  padding: 15px 30px;
+/* Navbar konsisten */
+.navbar {
+  background: #064635;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; top: 0; left: 0;
-  width: 100%; z-index: 1100;
+  padding: 12px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
 }
-.logo h2 { font-size: 1.5rem; color: white; }
-.navbar { flex: 1; display: flex; justify-content: center; }
-.navbar ul { list-style: none; display: flex; gap: 20px; }
-.navbar ul li a {
-  text-decoration: none; color: white; font-weight: bold;
-  transition: color 0.3s;
-}
-.navbar ul li a:hover { color: #a3d9a5; }
 
-/* Map */
+.navbar .logo {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #a3d9a5;
+}
+
 #map {
   position: absolute;
-  top: 70px; /* tinggi header */
+  top: 60px; /* tinggi navbar */
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: calc(100% - 70px); /* isi penuh sisa layar */
+  height: calc(100% - 60px);
 }
 
 /* Sidebar */

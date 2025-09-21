@@ -86,7 +86,7 @@ var marker1 = L.marker([-8.024141322546003, 114.18145476023389]).bindPopup(`
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Kebon Jeruk</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Bumi adalah ritual kebudayaan tahunan masyarakat Bondowoso dan menjadi agenda Ijen Caldera Fiesta...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Bumi Ijen adalah tradisi ritual di lereng Kawah Ijen, Bondowoso, sebagai wujud syukur dan doa untuk keselamatan, rezeki yang melimpah, dan terhindar dari bencana alam</td></tr>
     </table>
   </div>
 `);

@@ -166,3 +166,30 @@ footer {
   color: white;
   margin-top: 30px;
 }
+
+/* --- Responsive Navbar --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* munculkan hamburger */
+  }
+
+  .navbar {
+    display: none; /* sembunyikan menu */
+    flex-direction: column;
+    background: #064635;
+    position: absolute;
+    top: 60px; /* tinggi header */
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .navbar.active {
+    display: flex; /* tampilkan menu saat toggle */
+  }
+
+  .search-box {
+    display: none; /* kalau mau disembunyikan di hp */
+  }
+}

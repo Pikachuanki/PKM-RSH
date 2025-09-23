@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peta - Kelok Ijen</title>
+  <title>Peta</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -18,6 +18,7 @@
       <h2>Kelok Ijen</h2>
     </div>
     <nav class="navbar">
+      <a href="#" class="logo">Kelok Ijen</a>
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="profil.html">Profil</a></li>
@@ -31,9 +32,10 @@
 
   <!-- Sidebar -->
   <div id="sidebar">
+    <div class="sidebar-toggle">☰ Menu</div>
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Cari daerah...">
-      <button onclick="alert('Fitur pencarian nanti dihubungkan ke map')">🔍</button>
+      <button onclick="searchLocation()">🔍</button>
     </div>
 
     <div class="section">
@@ -51,13 +53,14 @@
     </div>
   </div>
 
+  <!-- Tombol panah atas (buat buka sidebar lagi di mobile) -->
+  <div class="sidebar-reopen">⬆</div>
+
   <!-- Map -->
   <div id="map"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Leaflet AJAX dari lokal -->
-  <script src="../leaflet.ajax.js"></script>
   <!-- JS eksternal -->
   <script src="../js/peta.js"></script>
 </body>
